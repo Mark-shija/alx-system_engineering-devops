@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# script that pings five times  an IP address passed as an argument
+
+# variable that stores IP passed
+IP="${1}"
+
+# filename variable
+f_name=$(basename "${BASH_SOURCE[@]}")
+
+if ! [ "$IP" ]; then
+	echo "Usage: ${f_name} {IP_ADDRESS}"
+else
+	ping -c 5 "${IP}"
+fi
