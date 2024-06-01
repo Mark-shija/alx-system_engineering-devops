@@ -6,20 +6,20 @@
 ##  Introduction 
 
 * In this project I was introduced to the folloowing concepts:
-	Network basics concept
-	Server concept
-	Web server concept
-	DNS concept
-	Load balancer concept
-	Monitoring concept
-	What is a database
-	What’s the difference between a web server and an app server?
-	DNS record types
-	Single point of failure
-	How to avoid downtime when deploying new code
-	High availability cluster (active-active/active-passive)
-	What is HTTPS
-	What is a firewall
+		Network basics concept
+		Server concept
+		Web server concept
+		DNS concept
+		Load balancer concept
+		Monitoring concept
+		What is a database
+		What’s the difference between a web server and an app server?
+		DNS record types
+		Single point of failure
+		How to avoid downtime when deploying new code
+		High availability cluster (active-active/active-passive)
+		What is HTTPS
+		What is a firewall
 
 ## Learning Objectives
 
