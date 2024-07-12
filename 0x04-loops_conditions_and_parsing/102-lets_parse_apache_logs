@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-# Parses an Apache log file and displays the IP and HTTP code for each visitor, along with the number of occurrences.
+# Parses the Apache log file and displays IP and HTTP status code.
 
-LOG_FILE="apache-access.log"
-
-if [[ ! -f $LOG_FILE ]]; then
-    echo "Log file '$LOG_FILE' does not exist."
-    exit 1
-fi
-
-awk '{print $1,$9}' "$LOG_FILE" | sort | uniq -c | sort -nr
+awk '{print $1, $9}' apache-access.log
