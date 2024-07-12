@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # Displays the content of the current working directory.
 
-for i in *-*
+for i in *
 do
-    echo "$i" | cut -d'-' -f2-
+    if [[ "$i" == *-* ]]; then
+        echo "$i" | cut -d'-' -f2-
+    else
+        echo "$i"
+    fi
 done
