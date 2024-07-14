@@ -1,13 +1,4 @@
-Host first-server
-    HostName 54.226.6.30
-    User ubuntu
+Host *
     IdentityFile ~/.ssh/school
     PreferredAuthentications publickey
     PasswordAuthentication no
-
-# Default configurations
-Host *
-    SendEnv LANG LC_*
-    HashKnownHosts yes
-    GSSAPIAuthentication yes
-    # Other defaults can remain commented out
