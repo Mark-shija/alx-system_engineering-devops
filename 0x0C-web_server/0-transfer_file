@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Script to transfer a file to a remote server using SCP
+
+if [ $# -lt 4 ]; then
+    echo "Usage: $0 File_path_to_file Ip Username path_to_SSH_key"
+    exit 1
+fi
+
+path_2_file=$1
+server_IP=$2
+username=$3
+ssh_key=$4
+
+# Ensure the public key is in authorized_keys on the remote server
+pub_key="${ssh_key}.pub"
+cat "$pub_key" | ssh -i "$ssh_key" "$username@$server_IP" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'
+
+# file transfer 
+scp -o StrictHostKeyChecking=no -i "$ssh_key" "$path_2_file" "$username"@"$server_IP":~/
