@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Installs nginx web server if not already installed
+
+# Check if Nginx is already installed
+if ! which nginx > /dev/null 2>&1; then
+    apt-get update
+    apt-get install -y nginx
+fi
+
+# Configure Nginx to use the custom 404 page and set up a redirect
+echo "server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html;
+
+    location /redirect_me {
+        return 301 https://github.com/Mark-shija;
+    }
+}" | sudo tee /etc/nginx/sites-available/default
+
+# Restart nginx service to apply changes
+service nginx restart
